@@ -3,6 +3,7 @@ const config = require("./conf.json")
 const token = config.token
 const prefix = config.prefix
 
+const Help_handler = require("./handlers/help_handler")
 const handler = require("./handlers/handler")
 const msg_handler = require("./handlers/msg_handler")
 
@@ -14,6 +15,7 @@ const client = new Discord.Client({
 });
 
 handler(client)
+Help_handler(client)
 
 client.once('ready', () => {
     console.log("Bot jest Online!")
